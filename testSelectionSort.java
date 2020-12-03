@@ -1,3 +1,4 @@
+package Lab10;
 /*
 * testSelectionSort.java
 *
@@ -12,9 +13,9 @@ import org.junit.Test;
 public class testSelectionSort {
  @Test
  public void test() {
-	 testPositive();
-	 testNegative();
-	 testMixed();
+	// testPositive();
+	 //testNegative();
+	// testMixed();
 	 testDuplicates();
  }
 
@@ -67,15 +68,49 @@ public class testSelectionSort {
        assertArrayEquals(Sortedarr,sortedArray);
    }
 
-	 public void testMixed(){
+   public void testMixed(){
 
-			 /** Test data contains with both positive, negative and zeros **/
-	 }
+  int[] arr = new int[5];
+    arr[0] = -8;
+    arr[1] = -15;
+    arr[2] = 1;
+    arr[3] = 0;
+    arr[4] = 12;
 
-	 public void testDuplicates(){
+    int[] Sortedarr = new int[5];
+    Sortedarr[0] = -15;
+    Sortedarr[1] = -8;
+    Sortedarr[2] = 0;
+    Sortedarr[3] = 1;
+    Sortedarr[4] = 12;
 
-			 /** Test data contains duplicates **/
-	 }
+    SelectionSort temp1 = new SelectionSort();
+    int[] sortedArray = temp1.basicSelectionSort(arr);
+
+    assertArrayEquals(Sortedarr,sortedArray);
+}
+
+public void testDuplicates(){
+
+  int[] arr = new int[5];
+    arr[0] = 12;
+    arr[1] = 12;
+    arr[2] = -7;
+    arr[3] = 1;
+    arr[4] = 87;
+
+    int[] Sortedarr = new int[5];
+    Sortedarr[0] = -7;
+    Sortedarr[1] = 1;
+    Sortedarr[2] = 12;
+    Sortedarr[3] = 12;
+    Sortedarr[4] = 87;
+
+    SelectionSort temp1 = new SelectionSort();
+    int[] sortedArray = temp1.basicSelectionSort(arr);
+
+    assertArrayEquals(Sortedarr,sortedArray);
+}
 
 
 }
